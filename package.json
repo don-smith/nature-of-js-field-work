@@ -1,0 +1,42 @@
+{
+  "name": "wombat-tag",
+  "version": "0.0.1",
+  "description": "Tag those marsupials",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locksmithdon/js-api-workshop.git"
+  },
+  "keywords": [
+    "wombat",
+    "marsupial",
+    "quadruped"
+  ],
+  "author": "Rich Churcher <rich.churcher@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/locksmithdon/js-api-workshop/issues"
+  },
+  "homepage": "https://github.com/locksmithdon/js-api-workshop#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "mongodb": "^2.0.43"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-mocha": "^2.1.3",
+    "gulp-nodemon": "^2.0.4",
+    "mocha": "^2.3.2",
+    "sinon": "^1.16.1",
+    "supertest": "^1.1.0"
+  }
+}
