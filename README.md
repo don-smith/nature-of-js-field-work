@@ -1,8 +1,8 @@
 ![Vombatus ursinus](https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Vombatus_ursinus_-Maria_Island_National_Park.jpg/320px-Vombatus_ursinus_-Maria_Island_National_Park.jpg)
 
-# Wombat Tag
+# Field Work
 
-Herd wombat to a point where it can be tagged and released.
+Tag and release wombats using JavaScript. (Yes, it really is the language that can do everything...)
 
 
 ## Setup
@@ -24,13 +24,13 @@ Herd wombat to a point where it can be tagged and released.
 7. Grab the workshop repository:
 
     ```
-    git clone https://github.com/locksmithdon/js-api-workshop
+    git clone https://github.com/nature-of-js/field-work
     ```
 
 8. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use `npm install`:
 
     ```
-    cd js-api-workshop/src
+    cd field-work
     npm install
     ```
 
@@ -52,5 +52,5 @@ Herd wombat to a point where it can be tagged and released.
     node dist/server.js
     ```
 
-12. The API endpoints will be available at _workspacename-username.c9.io/api/v1/wombats_.
+12. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint_name_.
 
