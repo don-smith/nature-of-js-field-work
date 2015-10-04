@@ -4,7 +4,7 @@ import {MongoClient} from 'mongodb';
 export function connect({
   host = 'localhost',
   port = 27017,
-  database = 'wombat-tag'
+  database = 'field-work'
 } = {}) {
   return new Promise((resolve, reject) => {
     MongoClient.connect(`mongodb://${host}:${port}/${database}`, 
@@ -21,12 +21,8 @@ export function getDocuments(collection) {
       .then(cursor => {
         cursor.each((err, doc) => {
           if (err) return reject(Error(err));
-          if (doc) {
-            documents.push(doc);
-          } else {
-            resolve(documents);
-          }
-        })
+          doc ? documents.push(doc) : resolve(documents);
+        });
       });
   });
 }
@@ -52,7 +48,7 @@ export function createDocument(doc, collection) {
         db.collection(collection).insertOne(doc, (err, result) => {
           if (err) return reject(err);
           resolve(doc);
-        })
+        });
       });
     });
   });

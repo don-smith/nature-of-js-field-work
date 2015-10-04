@@ -6,7 +6,7 @@ import _ from 'lodash';
 // Assumes unique constraint on 'name'
 export function create(doc, collection) {
   return new Promise((resolve, reject) => {
-    if (app.get('TURN') != 0) {
+    if (app.get('TURN') !== 0) {
       return reject(Error("Can't add mammals after the round begins."));
     }
     if (!isValid(doc)) {
