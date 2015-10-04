@@ -32,8 +32,10 @@ gulp.task('test', ['build'], function() {
 
 gulp.task('serve', ['build'], function() {
   nodemon({
+    delay: '2',
     script: 'dist/server.js',
     ext: 'js',
-    ignore: 'dist'
+    ignore: 'dist',
+    tasks: ['test']
   });
 });
