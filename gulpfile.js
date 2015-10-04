@@ -7,13 +7,10 @@ gulp.task('default', ['serve']);
 
 gulp.task('build', function() {
   return gulp.src([
-      'server.js', 
-      'app.js',
-      'gamelogic.js',
-      './dal/*.js',
-      './models/*.js',
-      './routes/*.js',
-      './tests/*.js'
+      '**/*.js',
+      '!gulpfile.js',
+      '!node_modules{,/**}',
+      '!dist{,/**}'
     ], { base: '.' })
     .pipe(babel())
     .pipe(gulp.dest('dist'));
@@ -27,11 +24,10 @@ gulp.task('test', ['build'], function() {
     //.pipe(mocha({reporter: 'nyan'}));
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', ['build'], function() {
   nodemon({
     script: 'dist/server.js',
     ext: 'js',
-    ignore: 'dist',
-    tasks: 'build'
+    ignore: 'dist'
   });
 });
