@@ -10,10 +10,9 @@ areaMap.route('/areamap')
   .get((req, res) => {
     Mammals.getAll('rangers').then(rangers => {
       Mammals.getAll('wombats').then( wombats => {
-        respond.withAreaMap(res, rangers, wombats, req.query),
-        err => respond.withError(res, err)
-      });
-    });
+        respond.withAreaMap(res, rangers, wombats, req.query);
+      }, err => respond.withError(res, err));
+    }, err => respond.withError(res, err));
   });
 
 export default areaMap;
