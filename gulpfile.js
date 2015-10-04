@@ -17,7 +17,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('test', ['build'], function() {
-  gulp.src('./dist/tests/wombat_test.js')
+  gulp.src('dist/tests/*_test.js')
     .pipe(mocha());
 
     // Uncomment for more nyancat
