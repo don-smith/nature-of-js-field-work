@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 var nodemon = require('gulp-nodemon');
 
@@ -12,6 +13,8 @@ gulp.task('build', function() {
       '!node_modules{,/**}',
       '!dist{,/**}'
     ], { base: '.' })
+    .pipe(eslint())
+    .pipe(eslint.format())
     .pipe(babel())
     .pipe(gulp.dest('dist'));
 });
