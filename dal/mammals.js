@@ -9,7 +9,7 @@ export function create(doc, collection) {
     if (app.get('TURN') !== 0) {
       return reject(Error("Can't add mammals after the round begins."));
     }
-    if (!isValid(doc)) {
+    if (!doc.hasOwnProperty('name')) {
       return reject(Error("That mammal is invalid!"));
     }
     let max = app.get('MAP_SIZE')-1;
@@ -44,15 +44,5 @@ export function update(name, coords, collection) {
       })
       .catch(reject);
   });
-}
-
-function isValid(mammal) {
-  const valid = { name: "", x: 0, y: 0, turn: 0 };
-  _.forOwn(valid, (val, key) => {
-    if (!mammal.hasOwnProperty(key)) {
-      return false;
-    }
-  });
-  return true;
 }
 
