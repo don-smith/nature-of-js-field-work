@@ -4,7 +4,7 @@ import {MongoClient} from 'mongodb';
 export function connect({
   host = 'localhost',
   port = 27017,
-  database = 'field-work'
+  database = app.get('DB')
 } = {}) {
   return new Promise((resolve, reject) => {
     MongoClient.connect(`mongodb://${host}:${port}/${database}`, 

@@ -40,5 +40,6 @@ app.set('WOMBATS', process.argv[4] || 5);
 app.set('TURN', 0);
 app.set('ROUND_ACTIVE', true);
 app.set('ROUND_LENGTH', 10);
+app.set('DB', 'field-work');
 
 export default app;
