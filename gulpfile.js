@@ -21,10 +21,13 @@ gulp.task('build', function() {
 
 gulp.task('test', ['build'], function() {
   gulp.src('dist/tests/*_test.js')
-    .pipe(mocha());
-
-    // Uncomment for more nyancat
-    //.pipe(mocha({reporter: 'nyan'}));
+    .pipe(mocha())
+    .once('error', function () {
+      process.exit(1);
+    })
+    .once('end', function () {
+      process.exit();
+    });
 });
 
 gulp.task('serve', ['build'], function() {
