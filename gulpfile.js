@@ -35,6 +35,6 @@ gulp.task('serve', ['build'], function() {
     script: 'dist/server.js',
     delay: 10,
     ignore: ['dist/*'],
-    tasks: ['build']
+    tasks: ['test']
   });
 });
