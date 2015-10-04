@@ -1,5 +1,5 @@
 {
-  "name": "wombat-tag",
+  "name": "field-work",
   "version": "0.0.1",
   "description": "Tag those marsupials",
   "main": "dist/server.js",
@@ -9,19 +9,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/locksmithdon/js-api-workshop.git"
+    "url": "git+https://github.com/nature-of-js/field-work.git"
   },
   "keywords": [
-    "wombat",
-    "marsupial",
-    "quadruped"
+    "javascript",
+    "node",
+    "express",
+    "api",
+    "apidays"
   ],
-  "author": "Rich Churcher <rich.churcher@gmail.com>",
-  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Rich Churcher",
+      "email": "rich.churcher@gmail.com",
+      "url": "https://richchurcher.github.io"
+    },
+    {
+      "name": "Don Smith",
+      "email": "locksmithdon@gmail.com",
+      "url": "https://about.me/don.smith"
+    }
+  ],
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/locksmithdon/js-api-workshop/issues"
+    "url": "https://github.com/nature-of-js/field-work/issues"
   },
-  "homepage": "https://github.com/locksmithdon/js-api-workshop#readme",
+  "homepage": "https://github.com/nature-of-js/field-work#readme",
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
@@ -30,12 +43,14 @@
   },
   "devDependencies": {
     "babel": "^5.8.23",
-    "chai": "^3.2.0",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-eslint": "^1.0.0",
     "gulp-mocha": "^2.1.3",
     "gulp-nodemon": "^2.0.4",
-    "mocha": "^2.3.2",
+    "mocha": "^2.3.3",
     "sinon": "^1.16.1",
     "supertest": "^1.1.0"
   }
