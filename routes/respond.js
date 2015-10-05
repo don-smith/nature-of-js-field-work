@@ -27,7 +27,6 @@ export function withDocument(res, doc) {
 }
 
 export function withError(res, err) {
-  console.error(err);
   res.status(400).json({ error: err.message });
 }
 
