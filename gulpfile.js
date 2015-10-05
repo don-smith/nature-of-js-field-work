@@ -1,12 +1,17 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+var del = require('del');
 var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 var nodemon = require('gulp-nodemon');
 
 gulp.task('default', ['serve']);
 
-gulp.task('build', function() {
+gulp.task('clean', function() {
+  return del(['dist']);
+});
+
+gulp.task('build', ['clean'], function() {
   return gulp.src([
       '**/*.js',
       '!gulpfile.js',
@@ -21,7 +26,7 @@ gulp.task('build', function() {
 
 gulp.task('test', ['build'], function() {
   gulp.src('dist/tests/*_test.js')
-    .pipe(mocha())
+    .pipe(mocha({reporter: 'progress'}))
     .once('error', function () {
       process.exit(1);
     })
