@@ -25,7 +25,7 @@ gulp.task('build', ['clean'], function() {
 });
 
 gulp.task('test', ['build'], function() {
-  gulp.src('dist/tests/*_test.js')
+  gulp.src('dist/tests/**/*_test.js')
     .pipe(mocha({reporter: 'progress'}))
     .once('error', function () {
       process.exit(1);
