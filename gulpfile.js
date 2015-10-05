@@ -33,7 +33,8 @@ gulp.task('test', ['build'], function() {
 gulp.task('serve', ['build'], function() {
   nodemon({
     script: 'dist/server.js',
-    ext: 'js',
-    ignore: 'dist'
+    delay: 10,
+    ignore: ['dist/*'],
+    tasks: ['test']
   });
 });
