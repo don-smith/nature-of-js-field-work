@@ -24,7 +24,7 @@ wombats.route('/wombats')
   .post((req, res) => {
     mammals.create(req.body, 'wombats')
       .then(
-        wombat => res.send(wombat),
+        wombat => res.status(201).send(wombat),
         err => respond.withError(res, err)
       );
   });

@@ -24,7 +24,7 @@ rangers.route('/rangers')
   .post((req, res) => {
     mammals.create(req.body, 'rangers')
       .then(
-        ranger => res.send(ranger),
+        ranger => res.status(201).send(ranger),
         err => respond.withError(res, err)
       );
   });
