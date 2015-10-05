@@ -5,6 +5,7 @@ import rangers from './routes/rangers';
 import wombats from './routes/wombats';
 import areamap from './routes/areamap';
 import {checkRoundStatus} from './routes/rounds';
+import {argv} from 'yargs';
 
 let app = express();
 
@@ -34,12 +35,12 @@ app.use('/api/v1', areamap);
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Map is square, default size is 20x20
-app.set('MAP_SIZE', process.argv[2] || 20);
-app.set('RANGERS', process.argv[3] || 10);
-app.set('WOMBATS', process.argv[4] || 5);
+app.set('MAP_SIZE',     argv.size    || 20);
+app.set('RANGERS',      argv.rangers || 10);
+app.set('WOMBATS',      argv.wombats || 5);
+app.set('ROUND_LENGTH', argv.turns   || 10);
 app.set('TURN', 0);
 app.set('ROUND_ACTIVE', true);
-app.set('ROUND_LENGTH', 10);
 app.set('DB', 'field-work');
 
 export default app;
