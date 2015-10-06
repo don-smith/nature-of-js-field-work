@@ -30,6 +30,18 @@ function turnInProgress(collection, type, turn) {
   return _.some(_.map(collection, 'turn'), t => t === turn);
 }
 
+export function checkDocument(doc, collection) {
+  if (app.get('TURN') !== 0) {
+    throw Error("Can't add mammals after the round begins.");
+  }
+  if (!doc.hasOwnProperty('name')) {
+    throw Error("That mammal is invalid!");
+  }
+  if (doc.locator === 'fixed' && collection !== 'wombats') {
+    throw Error("Only wombats can have fixed positions.");
+  }
+}
+
 export function checkMove(mammal, coords) {
   return new Promise((resolve, reject) => {
     if (!mammal) {
