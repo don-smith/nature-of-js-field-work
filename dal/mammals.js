@@ -1,6 +1,6 @@
 import app from '../app';
 import * as store from '../dal/store';
-import {checkMove, makeMove} from '../gamelogic';
+import {checkMove, makeMove, locator} from '../gamelogic';
 import _ from 'lodash';
 
 // Assumes unique constraint on 'name'
@@ -12,9 +12,16 @@ export function create(doc, collection) {
     if (!doc.hasOwnProperty('name')) {
       return reject(Error("That mammal is invalid!"));
     }
-    let max = app.get('MAP_SIZE')-1;
-    doc.x = _.random(0, max);
-    doc.y = _.random(0, max);
+    let locatorType = doc.locator || 'random';
+    if (locatorType === 'fixed' && collection !== 'wombats') {
+      return reject(Error("Only wombats can have fixed positions."));
+    }
+
+    try {
+      [doc.x, doc.y] = locator(locatorType)(doc);
+    } catch(e) {
+      return reject(e);
+    }
     doc.name = doc.name.toLowerCase();
     doc.turn = 0;
 

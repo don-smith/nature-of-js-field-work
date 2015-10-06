@@ -40,9 +40,10 @@ describe('Wombats (e2e):', () => {
         );
     });
 
-    describe('on turn 1', () => {
+    context('on turn 1', () => {
       before(() => app.set('TURN', 1));
       after(() => app.set('TURN', 0));
+
       it('should not allow wombats', () => {
         return request.post(`/api/v${apiVersion}/wombats`)
           .send({name: 'Thelonious'})
@@ -50,6 +51,35 @@ describe('Wombats (e2e):', () => {
           .then(res => res.body.error.should.equal(
             "Can't add mammals after the round begins."
           ));
+      });
+    });
+
+    context('with size 20', () => {
+      const size = app.get('MAP_SIZE');
+      before(() => app.set('MAP_SIZE', 20));
+      after(() => app.set('MAP_SIZE', size));
+
+      it('should allow fixed coordinates to be specified', () => {
+        return request.post(`/api/v${apiVersion}/wombats`)
+          .send({
+            name: 'Ellington',
+            locator: 'fixed',
+            x: 19,
+            y: 0
+          })
+          .expect(201);
+      });
+
+      it('should respond with an error if coordinates out of bounds', () => {
+        return request.post(`/api/v${apiVersion}/wombats`)
+          .send({
+            name: 'Coltrane',
+            locator: 'fixed',
+            x: 20,
+            y: 1
+          })
+          .expect(400)
+          .then(res => res.body.error.should.equal("Out of bounds."));
       });
     });
 

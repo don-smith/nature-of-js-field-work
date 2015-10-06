@@ -1,7 +1,7 @@
 import express from 'express';
 import * as respond from './respond'
 import * as mammals from '../dal/mammals';
-import {incrementTurn} from '../gamelogic';
+import {incrementTurn, locator} from '../gamelogic';
 import {checkRoundStatus} from './rounds';
 
 let wombats = express.Router();
