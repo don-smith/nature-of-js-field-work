@@ -39,12 +39,14 @@
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "lodash": "^3.10.1",
-    "mongodb": "^2.0.43"
+    "mongodb": "^2.0.43",
+    "yargs": "^3.26.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
+    "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-eslint": "^1.0.0",

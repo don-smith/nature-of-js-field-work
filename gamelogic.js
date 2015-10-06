@@ -66,3 +66,26 @@ export function makeMove(mammal, coords) {
   return mammal;
 }
 
+export function locator(type) {
+  switch(type) {
+    case 'fixed': return fixedLocation;
+    default: return randomLocation;
+  }
+}
+
+function randomLocation() {
+  let max = app.get('MAP_SIZE')-1;
+  return [_.random(0, max), _.random(0, max)];
+}
+
+function fixedLocation(doc) {
+  let max = app.get('MAP_SIZE')-1;
+  if (!Number.isInteger(doc.x) || !Number.isInteger(doc.y)) {
+    throw Error("Specify coordinates.");
+  }
+  if (doc.x < 0 || doc.x > max || doc.y < 0 || doc.y > max) {
+    throw Error("Out of bounds.");
+  }
+  return [doc.x, doc.y];
+}
+
