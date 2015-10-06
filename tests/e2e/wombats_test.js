@@ -76,7 +76,7 @@ describe('Wombats (e2e):', () => {
             name: 'Coltrane',
             locator: 'fixed',
             x: 20,
-            y: 1
+            y: -1
           })
           .expect(400)
           .then(res => res.body.error.should.equal("Out of bounds."));

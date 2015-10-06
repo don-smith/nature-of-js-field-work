@@ -42,9 +42,10 @@ describe('Rangers (e2e):', () => {
         );
     });
 
-    describe('on turn 1', () => {
+    context('on turn 1', () => {
       before(() => app.set('TURN', 1));
       after(() => app.set('TURN', 0));
+
       it('should not allow rangers', () => {
         return request.post(`/api/v${apiVersion}/rangers`)
           .send({name: 'Thelonious'})

@@ -66,7 +66,7 @@ describe('Mammals:', () => {
           locator: 'fixed',
           x: 20,
           y: -1
-        }, 'rangers');
+        }, 'wombats');
         return p.should.be.rejectedWith(Error);
       });
 
