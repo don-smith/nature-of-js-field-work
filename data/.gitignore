@@ -1,0 +1,3 @@
+# Cloud9 data directory. Ignore everything inside, except this file!
+*
+!.gitignore
