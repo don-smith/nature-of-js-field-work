@@ -1,5 +1,7 @@
 import app from './app'
 
 let port = process.env.PORT || 5000;
-app.listen(port);
-console.log('listening on port ' + port);
+let ip = process.env.IP || '0.0.0.0';
+app.listen(port, ip, () => {
+  console.log(`listening on ${ip}:${port}`);
+});

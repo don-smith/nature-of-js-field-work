@@ -30,13 +30,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
    nvm install 4.1
    ```
 
-10. Cloud9 is missing a system library required by MongoDB. To install it, type:
-
-    ```
-    sudo apt-get install libkrb5-dev
-    ```
-    
-11. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
+10. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
 
     ```
     npm install
@@ -44,7 +38,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 
     You'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!)
 
-12. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
+11. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
 
     ```
     ./mongod
@@ -52,17 +46,17 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 
     (That `./` is important.)
 
-13. Go back to your first terminal window and run the tests:
+12. Go back to your first terminal window and run the tests:
 
     ```
     gulp test
     ```
 
-14. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
+13. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
 
     ```
     gulp
     ```
 
-15. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
+14. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
 
