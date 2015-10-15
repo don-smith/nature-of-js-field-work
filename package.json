@@ -35,6 +35,9 @@
     "url": "https://github.com/nature-of-js/field-work/issues"
   },
   "homepage": "https://github.com/nature-of-js/field-work#readme",
+  "scripts": {
+    "preinstall": "if command -v \"apt-get\" >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install libkrb5-dev; fi"
+  },
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
