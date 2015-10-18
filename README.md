@@ -23,14 +23,22 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
    (Despite the placeholder text, it's best to use the full URL, otherwise you may get errors about your SSH key.)
 6. You can leave the template set to _Custom_. Go ahead and click _Create workspace_.
 7. When your workspace window opens, you'll see a blue terminal window at the bottom. It's asking for your GitHub username and password, type those in.
-8. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
-9. Install the latest version of Node.js. In the terminal window at the bottom of the screen, type:
+8. So you're not prompted each time you use git, complete its configuration with the following commands:
+
+    ```
+    git config --global user.name "Your name"
+    git config --global user.email "your@email"
+    git config --global credential.helper store
+    ```
+
+9. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
+10. Install the latest version of Node.js. In the terminal window at the bottom of the screen, type:
 
    ```
    nvm install 4.2
    ```
 
-10. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
+11. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
 
     ```
     ./install-global-dependencies
@@ -39,7 +47,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 
     You'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!)
 
-11. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
+12. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
 
     ```
     ./mongod
@@ -47,17 +55,17 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 
     (That `./` is important.)
 
-12. Go back to your initial terminal window and run the tests:
+13. Go back to your initial terminal window and run the tests:
 
     ```
     gulp test
     ```
 
-13. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
+14. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
 
     ```
     gulp
     ```
 
-14. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
+15. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
 
