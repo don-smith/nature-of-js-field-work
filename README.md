@@ -33,12 +33,12 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 10. To complete the install, run the following in the terminal window at the bottom of the screen, type (feel free to have a look at this file to see what it's doing):
 
    ```
-   ./complete-setup
+   source complete-setup
    ```
 
-This will take quite some time and you'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!)
+This will take quite some time and you'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!) It should be noted that normally you could rely on `npm install` in place of this script, but it was necessary to work around memory restrictions on Cloud 9 workspaces.
 
-10. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
+11. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
 
     ```
     ./mongod
@@ -46,17 +46,17 @@ This will take quite some time and you'll see output. A *lot* of output. You can
 
     (That `./` prefix is important.)
 
-11. Go back to your initial terminal window and run the tests:
+12. Go back to your initial terminal window and run the tests:
 
     ```
     gulp test
     ```
 
-12. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
+13. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
 
     ```
     gulp
     ```
 
-13. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
+14. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
 
