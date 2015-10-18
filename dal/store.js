@@ -7,8 +7,8 @@ export function connect({
   database = app.get('DB')
 } = {}) {
   return new Promise((resolve, reject) => {
-    MongoClient.connect(`mongodb://${host}:${port}/${database}`, 
-    (err, db) => {
+    let url = process.env.MONGOLAB_URI || `mongodb://${host}:${port}/${database}`;
+    MongoClient.connect(url, (err, db) => {
       err ? reject(err) : resolve(db);
     });
   });
