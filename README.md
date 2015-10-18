@@ -32,7 +32,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 9. Install the latest version of Node.js. In the terminal window at the bottom of the screen, type:
 
    ```
-   nvm install 4.1
+   nvm install 4.2
    ```
 
 10. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
