@@ -1,7 +1,5 @@
-#!/bin/bash
-
-source ~/.nvm/nvm.sh
 nvm install 4.2
+nvm alias default 4.2
 
 sudo apt-get update
 sudo apt-get install libkrb5-dev
@@ -12,10 +10,10 @@ npm install lodash --save
 npm install mongodb --save
 npm install yargs --save
 
-npm install babel --save-dev
 npm install chai --save-dev
 npm install chai-as-promised --save-dev
 npm install del --save-dev
+npm install gulp -g
 npm install gulp --save-dev
 npm install gulp-babel --save-dev
 npm install gulp-eslint --save-dev
