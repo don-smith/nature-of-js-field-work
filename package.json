@@ -4,8 +4,7 @@
   "description": "Tag those marsupials",
   "main": "dist/server.js",
   "scripts": {
-    "test": "gulp test",
-    "start": "gulp serve"
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
