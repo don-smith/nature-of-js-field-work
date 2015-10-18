@@ -1,8 +1,17 @@
+# Cutting edge baby, yeah!
 nvm install 4.2
 nvm alias default 4.2
 
+# This is needed so the mongodb mondule installs properly
 sudo apt-get update
 sudo apt-get install libkrb5-dev
+
+# Just automating this for you
+npm install gulp -g
+
+# The rest of the file would normally be taken 
+# care of by 'npm install' and package.json
+# but Cloud9 is forcing us to slow things down
 
 npm install body-parser --save
 npm install express --save
@@ -13,7 +22,6 @@ npm install yargs --save
 npm install chai --save-dev
 npm install chai-as-promised --save-dev
 npm install del --save-dev
-npm install gulp -g
 npm install gulp --save-dev
 npm install gulp-babel --save-dev
 npm install gulp-eslint --save-dev
