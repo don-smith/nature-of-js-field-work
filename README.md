@@ -23,13 +23,13 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
    (Despite the placeholder text, it's best to use the full URL, otherwise you may get errors about your SSH key.)
 6. You can leave the template set to _Custom_. Go ahead and click _Create workspace_.
 7. When your workspace window opens, you'll see a blue terminal window at the bottom. It's asking for your GitHub username and password, type those in.
-8. So you're not prompted each time you use git, complete its configuration with the following command (you will get prompted one more time, but then it will save your credentials):
+8. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
+9. So you're not prompted each time you use git, complete its configuration with the following command (you will get prompted one more time, but then it will save your credentials):
 
     ```
     ./config-git "Your name" "your@email"
     ```
 
-9. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
 10. To complete the install, run the following in the terminal window at the bottom of the screen, type (feel free to have a look at this file to see what it's doing):
 
    ```
