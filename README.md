@@ -20,42 +20,42 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
    https://github.com/nature-of-js/field-work
    ```
 
-   (It's best to use the full URL, otherwise you may get errors about your SSH key.)
+   (Despite the placeholder text, it's best to use the full URL, otherwise you may get errors about your SSH key.)
 6. You can leave the template set to _Custom_. Go ahead and click _Create workspace_.
 7. When your workspace window opens, you'll see a blue terminal window at the bottom. It's asking for your GitHub username and password, type those in.
 8. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
-9. Install the latest version of Node.js. In the terminal window at the bottom of the screen, type:
+9. So you're not prompted each time you use git, complete its configuration with the following command (you will get prompted one more time, but then it will save your credentials):
+
+    ```
+    ./config-git "Your name" "your@email"
+    ```
+
+10. To complete the install, run the following in the terminal window at the bottom of the screen, type (feel free to have a look at this file to see what it's doing):
 
    ```
-   nvm install 4.1
+   source complete-setup
    ```
 
-10. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
+This will take quite some time and you'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!) It should be noted that normally you can rely on `npm install` in place of some of what this script is doing, but it was necessary to work around memory restrictions in our Cloud 9 workspaces.
+
+11. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the MongoDB daemon:
 
     ```
-    npm install
+    ./start-mongodb
     ```
 
-    You'll see output. A *lot* of output. You can probably ignore it (if there's lots of red flashing by, maybe read those bits!)
+    (That `./` prefix is important.)
 
-11. We recommend opening a separate terminal window for the Mongo daemon. There's a `+` button at the top of the terminal that'll do that for you. In the new window, start the Mongo daemon:
-
-    ```
-    ./mongod
-    ```
-
-    (That `./` is important.)
-
-12. Go back to your first terminal window and run the tests:
+12. Go back to your initial terminal window and run the tests:
 
     ```
-    gulp test
+    npm test
     ```
 
 13. If all went well, you should see a progress bar and some tests passing! Now you can run the server:
 
     ```
-    gulp
+    npm start
     ```
 
 14. The API endpoints will be available at _workspacename-username.c9.io/api/v1/endpoint-name_.
