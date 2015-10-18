@@ -22,12 +22,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 
    (Despite the placeholder text, it's best to use the full URL, otherwise you may get errors about your SSH key.)
 6. You can leave the template set to _Custom_. Go ahead and click _Create workspace_.
-7. When your workspace window opens, you'll see a blue terminal window at the bottom. It's asking for your GitHub username and password, type those in. If you mess up your login and need to start again, just run this at the command prompt (don't forget the `.` at the end):
-
-    ```
-    git clone https://github.com/nature-of-js/field-work .
-    ```
-
+7. When your workspace window opens, you'll see a blue terminal window at the bottom. It's asking for your GitHub username and password, type those in.
 8. You should now have the workshop source code cloned to your workspace. You'll see the files and folders on the left side of the window.
 9. Install the latest version of Node.js. In the terminal window at the bottom of the screen, type:
 
@@ -38,6 +33,7 @@ Tag and release wombats using JavaScript. (Yes, it really is the language that c
 10. Use `npm` to install the packages we need. A `package.json` is already provided, so we just need to use:
 
     ```
+    ./install-global-dependencies
     npm install
     ```
 

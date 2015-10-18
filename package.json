@@ -5,8 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "test": "gulp test",
-    "start": "gulp serve",
-    "preinstall": "./install-global-dependencies"
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",

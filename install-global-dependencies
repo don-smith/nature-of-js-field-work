@@ -5,6 +5,3 @@ if command -v \"apt-get\" >/dev/null 2>&1; then
   sudo apt-get install libkrb5-dev
 fi
 
-npm install -g gulp
-npm install -g eslint
-
