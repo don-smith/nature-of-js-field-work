@@ -33,6 +33,12 @@ describe('Rangers (e2e):', () => {
         );
     });
 
+    it('should not allow rangers with a name that already exists', () => {
+      return request.post(`/api/v${apiVersion}/rangers`)
+        .send({name: "Gershwin"})
+        .expect(400);
+    });
+
     it('should not allow rangers without a name', () => {
       return request.post(`/api/v${apiVersion}/rangers`)
         .send({})

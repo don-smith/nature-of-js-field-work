@@ -62,7 +62,7 @@ describe('Wombats (e2e):', () => {
       it('should allow fixed coordinates to be specified', () => {
         return request.post(`/api/v${apiVersion}/wombats`)
           .send({
-            name: 'Ellington',
+            name: 'Thelonious',
             locator: 'fixed',
             x: 19,
             y: 0
