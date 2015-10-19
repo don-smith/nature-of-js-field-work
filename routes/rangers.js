@@ -47,6 +47,16 @@ rangers.route('/rangers/:name')
         result => incrementTurn().then(res.send(result)),
         err => respond.withError(res, err) 
       );
+  })
+
+  // DELETE /rangers/bartholemew
+  .delete((req, res) => {
+    mammals.remove(req.params.name, 'rangers')
+      .then(
+        result => res.sendStatus(204),
+        err => respond.withError(res, err) 
+      );
   });
+
 
 export default rangers;

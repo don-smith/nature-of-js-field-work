@@ -61,3 +61,15 @@ export function updateDocument(doc, collection) {
       .then(resolve, reject);
   });
 }
+
+export function removeDocument(name, collection) {
+  return new Promise((resolve, reject) => {
+    connect().then(db => db.collection(collection)
+      .remove({ name: name.toLowerCase() }, { justOne: true }, (err, doc) => {
+        if (err) return reject(err);
+        resolve(doc);
+      })
+    );
+  });
+}
+

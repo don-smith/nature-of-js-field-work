@@ -38,6 +38,15 @@ wombats.route('/wombats/:name')
         result => incrementTurn().then(res.send(result)),
         err => respond.withError(res, err)
       );
+  })
+
+  // DELETE /wombats/bartholemew
+  .delete((req, res) => {
+    mammals.remove(req.params.name, 'wombats')
+      .then(
+        result => res.sendStatus(204),
+        err => respond.withError(res, err) 
+      );
   });
 
 export default wombats;

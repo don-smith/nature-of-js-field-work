@@ -43,3 +43,9 @@ export function update(name, coords, collection) {
       .catch(reject);
   });
 }
+
+export function remove(name, collection) {
+  return new Promise((resolve, reject) => {
+    store.removeDocument(name, collection).then(resolve, reject);
+  });
+}

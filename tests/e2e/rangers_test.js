@@ -72,5 +72,17 @@ describe('Rangers (e2e):', () => {
 
   });
 
+  describe('DELETE /rangers/:name', () => {
+
+    before(() => 
+      request.post(`/api/v${apiVersion}/rangers`).send({name: 'Basie'})
+    );
+
+    it('should delete a mammal by name', () => {
+      return request.delete(`/api/v${apiVersion}/rangers/basie`)
+        .expect(204);
+    });
+
+  });
 });
 
