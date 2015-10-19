@@ -14,6 +14,23 @@ export function connect({
   });
 }
 
+export function checkIndices() {
+  return new Promise((resolve, reject) => {
+    connect().then(db => {
+      db.collection('rangers')
+        .ensureIndex('name', {unique: true}, (err, name) => {
+          if (err) return reject(err);
+        });
+      db.collection('wombats')
+        .ensureIndex('name', {unique: true}, (err, name) => {
+          if (err) return reject(err);
+        });
+      resolve();
+    })
+    .catch(reject);
+  });
+}
+
 export function getDocuments(collection) {
   return new Promise((resolve, reject) => {
     let documents = [];
