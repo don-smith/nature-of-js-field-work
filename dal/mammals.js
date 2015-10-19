@@ -34,12 +34,12 @@ export function getAll(collection) {
 
 export function update(name, coords, collection) {
   return new Promise((resolve, reject) => {
-    get(name, collection)
-      .then(mammal => logic.checkMove(mammal, coords))
-      .then(mammal => logic.makeMove(mammal, coords))
-      .then(mammal => {
-        store.updateDocument(mammal, collection).then(resolve, reject);
-      })
-      .catch(reject);
+    store.deleteDocument(name, collection).then(resolve, reject);
+  });
+}
+
+export function remove(name, collection) {
+  return new Promise((resolve, reject) => {
+    store.removeDocument(name, collection).then(resolve, reject);
   });
 }

@@ -85,4 +85,17 @@ describe('Wombats (e2e):', () => {
 
   });
 
+  describe('DELETE /wombats/:name', () => {
+
+    before(() => 
+      request.post(`/api/v${apiVersion}/wombats`).send({name: 'Basie'})
+    );
+
+    it('should delete a wombat by name', () => {
+      return request.delete(`/api/v${apiVersion}/wombats/basie`)
+        .expect(204);
+    });
+
+  });
+
 });
