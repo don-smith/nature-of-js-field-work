@@ -4,6 +4,7 @@ import path from 'path';
 import rangers from './routes/rangers';
 import wombats from './routes/wombats';
 import areamap from './routes/areamap';
+import reset from './routes/reset';
 import {checkRoundStatus} from './routes/rounds';
 import {argv} from 'yargs';
 
@@ -30,6 +31,7 @@ app.use(function(req, res, next) {
 app.use('/api/v1', rangers);
 app.use('/api/v1', wombats);
 app.use('/api/v1', areamap);
+app.use('/api/v1', reset);
 
 // static files in public
 app.use('/', express.static(path.join(__dirname, 'public')));
