@@ -42,9 +42,10 @@ rangers.route('/rangers/:name')
 
   // PUT /rangers/bartholemew
   .put((req, res) => {
-    mammals.update(req.params.name, req.body, 'rangers')
+    incrementTurn()
+      .then(mammals.update(req.params.name, req.body, 'rangers'))
       .then(
-        result => incrementTurn().then(res.send(result)),
+        result => res.send(result),
         err => respond.withError(res, err) 
       );
   })
