@@ -37,9 +37,8 @@ export function update(name, coords, collection) {
     get(name, collection)
       .then(mammal => logic.checkMove(mammal, coords))
       .then(mammal => logic.makeMove(mammal, coords))
-      .then(mammal => {
-        store.updateDocument(mammal, collection).then(resolve, reject);
-      })
+      .then(mammal => store.updateDocument(mammal, collection))
+      .then(resolve, reject)
       .catch(reject);
   });
 }

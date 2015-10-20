@@ -1,5 +1,5 @@
 import app from './app';
-import mammals from './dal/mammals';
+import * as mammals from './dal/mammals';
 import _ from 'lodash';
 
 // Increment the turn if no mammals are yet to move
@@ -64,7 +64,7 @@ export function checkMove(mammal, coords) {
       return reject(Error("Out of bounds."));
     }
 
-    resolve(mammal);
+    return resolve(mammal);
   });
 }
 
