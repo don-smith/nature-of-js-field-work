@@ -39,7 +39,7 @@
     "express": "^4.13.3",
     "lodash": "^3.10.1",
     "mongodb": "^2.0.43",
-    "yargs": "^3.26.0"
+    "yargs": "^15.0.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
